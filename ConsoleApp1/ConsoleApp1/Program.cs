@@ -24,58 +24,72 @@ namespace ConsoleApp1
                 Console.WriteLine(e.ToString());
             }
 
-        }
+            students.Add(null);
 
-    }
-
-}
-
-class Student
-{
-    private string _first_name;
-    public string first_name { get => _first_name; }
-
-    private String _last_name;
-    public string last_name { get => _last_name; }
-
-    private String _id;
-    string id
-    {
-        get => _id;
-        set
-        {
-            if (!value.Contains("ID"))
+            foreach (Student s in students)
             {
-                throw new Exception("ID Must contain \"ID\"!");
+                if (s != null)
+                {
+                    Console.WriteLine(s.ToString());
+                }
+                else
+                {
+                    Console.WriteLine("Student is null.");
+                }
             }
 
-            _id = value;
         }
+
     }
 
-    public Student()
+
+
+    class Student
     {
+        private string _first_name;
+        public string first_name { get => _first_name; }
+
+        private String _last_name;
+        public string last_name { get => _last_name; }
+
+        private String _id;
+        string id
+        {
+            get => _id;
+            set
+            {
+                if (!value.Contains("ID"))
+                {
+                    throw new Exception("ID Must contain \"ID\"!");
+                }
+
+                _id = value;
+            }
+        }
+
+        public Student()
+        {
+
+        }
+
+        public Student(string fn, string ln, string id)
+        {
+            _first_name = fn;
+            _last_name = ln;
+            this.id = id;
+        }
+
+        ~Student()
+        {
+            Console.WriteLine("I, " + ToString() + ", AM BEING GARBAGE COLLECTED! AAAAA!");
+        }
+
+        public override string ToString()
+        {
+            return $"{id}: {first_name} {last_name}";
+        }
+
+
 
     }
-
-    public Student(string fn, string ln, string id)
-    {
-        _first_name = fn;
-        _last_name = ln;
-        this.id = id;
-    }
-
-    ~Student()
-    {
-        Console.WriteLine("I, " + ToString() + ", AM BEING GARBAGE COLLECTED! AAAAA!");
-    }
-
-    public string ToString()
-    {
-        return $"{id}: {first_name} {last_name}";
-    }
-
-
-
-}
 }
