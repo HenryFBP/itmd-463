@@ -10,24 +10,17 @@ namespace WebApplication2
         {
             if (Page.IsPostBack)
             {
-
+                TextBoxOutput.Text = "You entered: " + TextBox1.Text;
             }
             else
             {
-
-                try
+                using (StreamWriter sw = System.IO.File.AppendText(Server.MapPath("/App_Data/access.log")))
                 {
-                    using (StreamWriter sw = System.IO.File.AppendText(Server.MapPath("/App_Data/foo.txt")))
-                    {
-                        sw.Write($"WebForm1 accessed at {System.DateTime.UtcNow}.\n");
+                    sw.Write($"WebForm1 accessed at {System.DateTime.UtcNow}.\n");
 
-                        sw.Flush();
-                    }
+                    sw.Flush();
                 }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.ToString());
-                }
+
 
             }
         }
