@@ -86,7 +86,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="disconnectedMode.aspx" />
+    <Content Include="WebFormDisconnectedMode.aspx" />
     <Content Include="Global.asax" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
@@ -104,27 +104,27 @@
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="connectedMode.aspx" />
+    <Content Include="WebFormConnectedMode.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="QueryResult.cs" />
-    <Compile Include="disconnectedMode.aspx.cs">
-      <DependentUpon>disconnectedMode.aspx</DependentUpon>
+    <Compile Include="WebFormDisconnectedMode.aspx.cs">
+      <DependentUpon>WebFormDisconnectedMode.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="disconnectedMode.aspx.designer.cs">
-      <DependentUpon>disconnectedMode.aspx</DependentUpon>
+    <Compile Include="WebFormDisconnectedMode.aspx.designer.cs">
+      <DependentUpon>WebFormDisconnectedMode.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="connectedMode.aspx.cs">
-      <DependentUpon>connectedMode.aspx</DependentUpon>
+    <Compile Include="WebFormConnectedMode.aspx.cs">
+      <DependentUpon>WebFormConnectedMode.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="connectedMode.aspx.designer.cs">
-      <DependentUpon>connectedMode.aspx</DependentUpon>
+    <Compile Include="WebFormConnectedMode.aspx.designer.cs">
+      <DependentUpon>WebFormConnectedMode.aspx</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
   </ItemGroup>
