@@ -15,6 +15,7 @@ namespace Lab1
             {"^", new BinaryFunction((l) => Math.Pow(l[0], l[1]))},
             {"%", new BinaryFunction((l) => l[0] % l[1]) },
             {"log", new BinaryFunction((l) => Math.Log(l[1], l[0]) )},
+            {"concat", new BinaryFunction((l) => double.Parse(l[0].ToString() + l[1].ToString()))}
         };
     }
 
