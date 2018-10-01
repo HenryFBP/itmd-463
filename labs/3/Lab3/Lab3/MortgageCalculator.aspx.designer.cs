@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Lab3 {
-    
-    
-    public partial class MortgageCalculator {
-        
+namespace Lab3
+{
+
+
+    public partial class MortgageCalculator
+    {
+
         /// <summary>
         /// TextBoxPrinciple control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace Lab3 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxPrinciple;
-        
+
         /// <summary>
         /// RadioButtonListYears control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace Lab3 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonListYears;
-        
+
         /// <summary>
         /// TextBoxYearsOther control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace Lab3 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxYearsOther;
-        
+
         /// <summary>
         /// DropDownListInterestRate control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace Lab3 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropDownListInterestRate;
-        
+
         /// <summary>
         /// TextBoxResult control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace Lab3 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBoxResult;
-        
+
         /// <summary>
         /// BulletedListProblems control.
         /// </summary>

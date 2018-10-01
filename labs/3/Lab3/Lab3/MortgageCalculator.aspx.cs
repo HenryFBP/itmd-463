@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Web;
 
 namespace Lab3
 {
@@ -33,8 +35,6 @@ namespace Lab3
                 foreach (double d in percents)
                 {
                     DropDownListInterestRate.Items.Add(d.ToString());
-
-                    MortgageLib.MonthlyPayment(0, 0, 0);
                 }
             }
 
@@ -108,9 +108,24 @@ namespace Lab3
                     BulletedListProblems.Items.Add("Interest rate is an invalid number.");
                 }
 
+                // If there are no problems
                 if (BulletedListProblems.Items.Count is 0)
                 {
                     double res = MortgageLib.MonthlyPayment(principal, interestrate, years);
+
+                    String filepath = HttpContext.Current.Server.MapPath("~/App_Data/mortgage.log.csv");
+
+                    // Seconds since UNIX epoch.
+                    int secs = (int)((DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds);
+
+                    // If logfile doesn't exist, make it!
+                    if (!File.Exists(filepath))
+                    {
+                        MortgageLogger.GenerateMortgageLogfile(filepath);
+                    }
+
+                    // Log a single mortgage.
+                    MortgageLogger.LogMortgage(filepath, secs, principal, interestrate, years);
 
                     string str = res.ToString("n2");
 
