@@ -4,6 +4,8 @@ namespace Lab3
 {
     public static class MortgageLogger
     {
+
+        public static string LOGPATH = "~/App_Data/mortgage.log.csv";
         // Log a mortgage.
         public static void LogMortgage(string filepath, long time, double principle, double rate, double years)
         {

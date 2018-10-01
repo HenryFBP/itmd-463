@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace Lab3
 {
@@ -11,7 +7,21 @@ namespace Lab3
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            String filepath = HttpContext.Current.Server.MapPath(MortgageLogger.LOGPATH);
 
+            GridViewHistory.DataSource = CSVHelper.GetDataTabletFromCSVFile(filepath);
+
+            GridViewHistory.DataBind();
+        }
+
+        protected void ButtonDelete_Click(object sender, EventArgs e)
+        {
+            String filepath = HttpContext.Current.Server.MapPath(MortgageLogger.LOGPATH);
+
+            MortgageLogger.GenerateMortgageLogfile(filepath);
+
+            // Refresh the page.
+            Page.Response.Redirect(Page.Request.Url.ToString(), true);
         }
     }
 }

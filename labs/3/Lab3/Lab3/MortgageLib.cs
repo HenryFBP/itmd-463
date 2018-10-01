@@ -12,7 +12,10 @@ namespace Lab3
 
             double res = top / bot;
 
-            Console.WriteLine("With a principle of ${0}, duration of {1} years and a interest rate of {2}% the monthly loan payment amount is {3:$0.00}", principal, years, rate, res);
+            Console.Write(principal);
+            Console.Write(rate);
+            Console.Write(years);
+            Console.WriteLine(res);
 
             return res;
         }

@@ -113,7 +113,7 @@ namespace Lab3
                 {
                     double res = MortgageLib.MonthlyPayment(principal, interestrate, years);
 
-                    String filepath = HttpContext.Current.Server.MapPath("~/App_Data/mortgage.log.csv");
+                    String filepath = HttpContext.Current.Server.MapPath(MortgageLogger.LOGPATH);
 
                     // Seconds since UNIX epoch.
                     int secs = (int)((DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds);
