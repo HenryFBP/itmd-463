@@ -13,7 +13,7 @@ namespace Lab4
         // Hi prof. I'm abusing the UTF-8 support pretty hard.
 
         // Did you notice the zero-width spaces? There are two.
-        〇﹏〇​ᖴᖇᑌIT​〤﹏〤​ ʄʀʊɨȶ = new 〇﹏〇​ᖴᖇᑌIT​〤﹏〤​(HttpContext.Current.Server.MapPath(〇﹏〇​ᖴᖇᑌIT​〤﹏〤​.DATA_PATH));
+        static 〇﹏〇​ᖴᖇᑌIT​〤﹏〤​ ʄʀʊɨȶ = new 〇﹏〇​ᖴᖇᑌIT​〤﹏〤​(HttpContext.Current.Server.MapPath(〇﹏〇​ᖴᖇᑌIT​〤﹏〤​.DATA_PATH));
 
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -65,8 +65,8 @@
             <hr />
             <footer>
                 <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
-                <asp:Timer ID="TimerTime" runat="server" Interval="1000" OnTick="TimerTime_Tick"></asp:Timer>
-                <asp:Timer ID="TimerFruit" runat="server" Interval="5000" OnTick="TimerFruit_Tick"></asp:Timer>
+                <asp:Timer ID="TimerTime" runat="server" Interval="1000" OnTick="TimerTime_Tick" OnLoad="TimerFruit_Tick"></asp:Timer>
+                <asp:Timer ID="TimerFruit" runat="server" Interval="5000" OnTick="TimerFruit_Tick" OnLoad="TimerTime_Tick"></asp:Timer>
 
                 <asp:UpdatePanel ID="UpdatePanelBottom" runat="server" >
                     <ContentTemplate>
