@@ -22,6 +22,15 @@ namespace Lab4 {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
         
         /// <summary>
+        /// UpdatePanelTime control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UpdatePanelTime;
+        
+        /// <summary>
         /// TimerTime control.
         /// </summary>
         /// <remarks>
@@ -31,24 +40,6 @@ namespace Lab4 {
         protected global::System.Web.UI.Timer TimerTime;
         
         /// <summary>
-        /// TimerFruit control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.Timer TimerFruit;
-        
-        /// <summary>
-        /// UpdatePanelBottom control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanelBottom;
-        
-        /// <summary>
         /// LabelTime control.
         /// </summary>
         /// <remarks>
@@ -56,6 +47,15 @@ namespace Lab4 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LabelTime;
+        
+        /// <summary>
+        /// TimerFruit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.Timer TimerFruit;
         
         /// <summary>
         /// LabelFruit control.

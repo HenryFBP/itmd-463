@@ -65,18 +65,24 @@
             <hr />
             <footer>
                 <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
-                <asp:Timer ID="TimerTime" runat="server" Interval="1000" OnTick="TimerTime_Tick" OnLoad="TimerFruit_Tick"></asp:Timer>
-                <asp:Timer ID="TimerFruit" runat="server" Interval="5000" OnTick="TimerFruit_Tick" OnLoad="TimerTime_Tick"></asp:Timer>
 
-                <asp:UpdatePanel ID="UpdatePanelBottom" runat="server" >
+                <asp:UpdatePanel UpdateMode="Conditional" ID="UpdatePanelTime" runat="server">
                     <ContentTemplate>
+                        <asp:Timer ID="TimerTime" runat="server" Interval="1000" OnTick="TimerTime_Tick" OnLoad="TimerTime_Tick"></asp:Timer>
                         <asp:Label ID="LabelTime" runat="server">Help me, I'm empty!</asp:Label>
-                        <br />
+                    </ContentTemplate>
+                    <Triggers>
+                        <asp:AsyncPostBackTrigger ControlID="TimerTime" EventName="Tick" />
+                    </Triggers>
+                </asp:UpdatePanel>
+                <asp:UpdatePanel UpdateMode="Conditional" runat="server">
+                    <ContentTemplate>
+                        <asp:Timer ID="TimerFruit" runat="server" Interval="5000" OnTick="TimerFruit_Tick" OnLoad="TimerFruit_Tick"></asp:Timer>
                         <asp:Label ID="LabelFruit" runat="server">Fruit?</asp:Label>
                     </ContentTemplate>
                     <Triggers>
-                        <asp:AsyncPostBackTrigger ControlID="TimerTime" EventName="Tick"/>
                         <asp:AsyncPostBackTrigger ControlID="TimerFruit" EventName="Tick" />
+
                     </Triggers>
                 </asp:UpdatePanel>
             </footer>

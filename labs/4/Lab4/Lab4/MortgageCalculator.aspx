@@ -9,12 +9,12 @@
             </li>
             <li>
                 <label>Duration (years)</label>
-                <asp:RadioButtonList ID="RadioButtonListYears" runat="server" OnSelectedIndexChanged="PostBackYears">
+                <asp:RadioButtonList ID="RadioButtonListYears" runat="server" AutoPostBack="true" OnSelectedIndexChanged="PostBackYears">
                     <asp:ListItem Value="15">15</asp:ListItem>
                     <asp:ListItem Value="30">30</asp:ListItem>
                     <asp:ListItem Value="other">other</asp:ListItem>
                 </asp:RadioButtonList>
-                <asp:UpdatePanel runat="server" ID="MortgageCalcUpdatePanel">
+                <asp:UpdatePanel  UpdateMode="Conditional" runat="server" ID="MortgageCalcUpdatePanel">
                     <ContentTemplate>
                         <asp:TextBox ID="TextBoxYearsOther" runat="server" Enabled="false"></asp:TextBox>
                     </ContentTemplate>
