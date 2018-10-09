@@ -5,7 +5,7 @@ namespace Lab4
 {
     public partial class MortgageHistory : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected void populate_data()
         {
             String filepath = HttpContext.Current.Server.MapPath(MortgageLogger.LOGPATH);
 
@@ -15,14 +15,18 @@ namespace Lab4
 
         }
 
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            populate_data();
+        }
+
         protected void ButtonDelete_Click(object sender, EventArgs e)
         {
             String filepath = HttpContext.Current.Server.MapPath(MortgageLogger.LOGPATH);
 
             MortgageLogger.GenerateMortgageLogfile(filepath);
 
-            // Refresh the page.
-            Page.Response.Redirect(Page.Request.Url.ToString(), true);
+            populate_data();
         }
     }
 }

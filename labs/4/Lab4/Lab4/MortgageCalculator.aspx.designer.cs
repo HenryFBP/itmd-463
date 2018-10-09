@@ -22,15 +22,6 @@ namespace Lab4 {
         protected global::System.Web.UI.WebControls.TextBox TextBoxPrinciple;
         
         /// <summary>
-        /// MortgageCalcUpdatePanel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel MortgageCalcUpdatePanel;
-        
-        /// <summary>
         /// RadioButtonListYears control.
         /// </summary>
         /// <remarks>
@@ -38,6 +29,15 @@ namespace Lab4 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonListYears;
+        
+        /// <summary>
+        /// MortgageCalcUpdatePanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel MortgageCalcUpdatePanel;
         
         /// <summary>
         /// TextBoxYearsOther control.

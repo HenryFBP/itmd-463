@@ -8,18 +8,18 @@
                 <asp:TextBox ID="TextBoxPrinciple" runat="server"></asp:TextBox>
             </li>
             <li>
-                <asp:UpdatePanel runat="server" ID="MortgageCalcUpdatePanel" ChildrenAsTriggers="true">
+                <label>Duration (years)</label>
+                <asp:RadioButtonList ID="RadioButtonListYears" runat="server" OnSelectedIndexChanged="PostBackYears">
+                    <asp:ListItem Value="15">15</asp:ListItem>
+                    <asp:ListItem Value="30">30</asp:ListItem>
+                    <asp:ListItem Value="other">other</asp:ListItem>
+                </asp:RadioButtonList>
+                <asp:UpdatePanel runat="server" ID="MortgageCalcUpdatePanel">
                     <ContentTemplate>
-                        <label>Duration (years)</label>
-                        <asp:RadioButtonList ID="RadioButtonListYears" runat="server" OnSelectedIndexChanged="PostBackYears" >
-                            <asp:ListItem Value="15">15</asp:ListItem>
-                            <asp:ListItem Value="30">30</asp:ListItem>
-                            <asp:ListItem Value="other">other</asp:ListItem>
-                        </asp:RadioButtonList>
                         <asp:TextBox ID="TextBoxYearsOther" runat="server" Enabled="false"></asp:TextBox>
                     </ContentTemplate>
                     <Triggers>
-                        <asp:AsyncPostBackTrigger ControlID="RadioButtonListYears" EventName="SelectedIndexChanged"  />
+                        <asp:AsyncPostBackTrigger ControlID="RadioButtonListYears" EventName="SelectedIndexChanged" />
                     </Triggers>
                 </asp:UpdatePanel>
             </li>
