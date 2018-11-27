@@ -154,6 +154,8 @@
     </Compile>
     <Compile Include="Models\MortgageInfo.cs" />
     <Compile Include="Models\MortgageResult.cs" />
+    <Compile Include="MortgageLib.cs" />
+    <Compile Include="MortgageLoggerSQL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

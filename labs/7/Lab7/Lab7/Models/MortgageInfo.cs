@@ -10,7 +10,14 @@ namespace Lab7.Models
         public double Cost { get; set; }
         public double Principle { get; set; }
         public double InterestRate { get; set; }
-        public double DurationYears { get; set; }
-        public double MonthlyPayment { get; set; }
+        public int DurationYears { get; set; }
+
+        public MortgageInfo(double cost, double principle, double interestRate, int durationYears)
+        {
+            Cost = cost;
+            Principle = principle;
+            InterestRate = interestRate;
+            DurationYears = durationYears;
+        }
     }
 }

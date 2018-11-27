@@ -16,9 +16,11 @@ namespace Lab7.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(float cost, float principle, float interestRate, float durationYears, float monthlyPayment)
+        public ActionResult Index(double Cost, double Principle, double InterestRate, int DurationYears)
         {
-            MortgageResult mortgageResult = new MortgageResult();
+            MortgageInfo mortgageInfo = new MortgageInfo(Cost, Principle, InterestRate, DurationYears);
+            
+            MortgageResult mortgageResult = new MortgageResult { MonthlyPayment = MortgageLib.MonthlyPayment(mortgageInfo) };
 
             return View("IndexResult", mortgageResult);
         }

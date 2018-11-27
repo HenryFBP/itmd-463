@@ -9,6 +9,6 @@ namespace Lab7.Models
     public class MortgageResult
     {
         [Editable(false)]
-        public String CoolThing { get; set; }
+        public double MonthlyPayment { get; set; }
     }
 }

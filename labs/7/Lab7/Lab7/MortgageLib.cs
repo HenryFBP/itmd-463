@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Lab7.Models;
+using System;
 
 namespace Lab7
 {
@@ -19,5 +20,11 @@ namespace Lab7
 
             return res;
         }
+
+        public static double MonthlyPayment(MortgageInfo m)
+        {
+            return MonthlyPayment(m.Principle, m.InterestRate, m.DurationYears);
+        }
+
     }
 }
