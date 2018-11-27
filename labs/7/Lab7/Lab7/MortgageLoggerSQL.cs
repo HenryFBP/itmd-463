@@ -32,10 +32,11 @@ namespace Lab7
 
         public static readonly string TableCreationString =
             $@"CREATE TABLE {TableName}(
-                principle   FLOAT,
-                time		BIGINT,
-                rate        FLOAT,
-                years       FLOAT)";
+                principle       FLOAT,
+                time		    BIGINT,
+                rate            FLOAT,
+                years           FLOAT,
+                monthlyPayment  FLOAT)";
 
         public static SqlConnection Connect()
         {
@@ -50,8 +51,6 @@ namespace Lab7
         {
             SqlConnection connection = Connect();
 
-            connection.Open();
-
             SqlCommand command = new SqlCommand(TableCreationString, connection);
 
             command.ExecuteNonQuery();
@@ -61,8 +60,6 @@ namespace Lab7
 
         public static void TryCreateTables()
         {
-            SqlConnection connection = Connect();
-
             try
             {
                 CreateTables();
@@ -71,21 +68,21 @@ namespace Lab7
             {
                 ;
             }
-
-            connection.Close();
         }
 
-        public static void Log(MortgageInfo m)
+        public static void Log(MortgageInfo mortgageInfo, MortgageResult mortgageResult)
         {
             SqlConnection connection = Connect();
 
-            SqlCommand cmd = new SqlCommand($"INSERT INTO {TableName} VALUES(@principle, @time, @rate, @years)",
+            SqlCommand cmd = new SqlCommand($"INSERT INTO {TableName} VALUES(@principle, @time, @rate, @years, @monthlyPayment)",
                 connection);
 
-            cmd.Parameters.AddWithValue("principle", m.Principle);
-            cmd.Parameters.AddWithValue("time", m.DurationYears);
-            cmd.Parameters.AddWithValue("rate", m.InterestRate);
-            cmd.Parameters.AddWithValue("years", m.DurationYears);
+            cmd.Parameters.AddWithValue("principle", mortgageInfo.Principle);
+            cmd.Parameters.AddWithValue("time", DateTime.Now.Ticks);
+            cmd.Parameters.AddWithValue("rate", mortgageInfo.InterestRate);
+            cmd.Parameters.AddWithValue("years", mortgageInfo.DurationYears);
+
+            cmd.Parameters.AddWithValue("monthlyPayment", mortgageResult.MonthlyPayment);
 
             cmd.ExecuteNonQuery();
 

@@ -13,10 +13,10 @@ namespace Lab7
 
             double res = top / bot;
 
-            Console.Write(principal);
-            Console.Write(rate);
-            Console.Write(years);
-            Console.WriteLine(res);
+            // Console.Write(principal);
+            // Console.Write(rate);
+            // Console.Write(years);
+            // Console.WriteLine(res);
 
             return res;
         }
@@ -25,6 +25,5 @@ namespace Lab7
         {
             return MonthlyPayment(m.Principle, m.InterestRate, m.DurationYears);
         }
-
     }
 }
